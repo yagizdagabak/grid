@@ -1,0 +1,127 @@
+//Manifest-Version 1.0
+
+struct Profile { extends GridProfile.class, //ekle
+	String userName;
+	String userStatus;
+	String userImage;
+	List friendsList;
+	List categoryList;
+	int topScoree;
+}
+
+struct Program { //ekle
+
+}
+
+struct Canvas { //ekle
+
+}
+
+struct Constants { //ekle
+List scores;
+
+
+}
+
+struct Database { //ekle
+
+}
+
+struct Category {
+	String name;
+	double value;
+	Profile topPlayer;
+	ArrayList scorerList;
+	ArrayList initialCategories;
+	ArrayList existingCategories.add(initialCategories);
+	import <thread>;
+	std:thread = newCategory(addNewCategory);
+	std::thread = initialize(catInit);
+	std::thread = changeValContent(catChange);
+	std::thread = changeValScore(catChange);
+
+}
+
+struct Content {
+	String label;
+	int numLikes;
+	Profile liker;
+	List relatedCategories;
+	import <thread>;
+	std::thread = relatedCats(getRelatedCats);
+}
+
+
+public ArrayList initalCategories () {
+	initialCategories.add("LoverScore");
+	initialCategories.add("CareerScore");
+	initialCategories.add("IntelligenceScore");
+	initialCategories.add("FriendshipScore");
+	initialCategories.add("TrustScore");
+	initialCategories.add("FashionScore");
+	initialCategories.add("PopularityScore");
+}
+
+public thread ArrayList newCategory = addNewCategory (Category cat) {
+	string name = cat.name();
+	double value = 0;
+	existingCategories.add(cat);
+}
+
+public thread List relatedCats = getRelatedCats (Content cont) {
+	List relatedCats;
+	Category related = GridDatabase.get(relatedCat);
+	relatedCats.add(relatedCat);
+}
+
+public thread initialize = catInit	(ArrayList initalCategories) {
+	for (int i = 0; i < NUMBER_OF_INITIAL_CATEGORIES; i++) {
+		String c = initialCategories.get(i);
+		Category cat = new Category(name = c, value = 0);
+	}
+}
+
+public thread changeVal = catChangeContent (Profile p, Category cat, Content cont, double initialScore) {
+		double newScore = initialScore;
+		double catStrength, honesty, percievedImportance, catPopularity = 0;
+		catStrength = cont.liker.cat.value();
+		honesty = liker.list.categoryList.size() / existingCategories.size();
+		int temp = 0;
+		for (int i = 0; int < p.categoryList; i++) {
+			categoryList.get(i);
+			if scorerList.containsProfile(p, i) temp++;
+		}
+		percievedImportance = (double) temp/topScoree;
+		catPopularity = (cont.liker.cat.value() * cont.liker.cat.scorerList.size()) /
+										(topPlayer.cat.value() * topPlayer.cat.valuescorerList.size())
+		int totalLikes = 0;
+		for (int i = 0; int < cont.relatedCats.size(); i++) {
+				totalLikes += cont.getRelatedCats.numLikes(i);
+		}
+		newScore = (newScore * totalLikes + catStrength * honesty * percievedImportance * catPopularity) / totalLikes + 1;
+		if (temp > topScoree) topScoree = temp;
+		if (p.cat.value() * p.cat.scorerList.size() > topPlayer.cat.value() * topPlayer.cat.scorerList.size()) topPlayer = p;
+}
+
+public thread changeVal = catChangeScore (Profile p, Category cat, double initialScore, double givenScore) {
+	double newScore = initialScore;
+	double catStrength, honesty, percievedImportance, catPopularity = 0;
+	catStrength = p.cat.value();
+	honesty = p.list.categoryList.size() / existingCategories.size();
+	int temp = 0;
+	for (int i = 0; int < p.categoryList; i++) {
+		categoryList.get(i);
+		if scorerList.containsProfile(p, i) temp++;
+	}
+	percievedImportance = (double) temp/topScoree;
+	catPopularity = (p.cat.value() * p.cat.scorerList.size()) /
+									(topPlayer.cat.value() * topPlayer.cat.valuescorerList.size())
+	newScore = (newScore*cat.scorerList.size() + givenScore * catStrength * honesty * percievedImportance * catPopularity) / (newScore*cat.scorerList.size() + 1);
+	if (temp > topScoree) topScoree = temp;
+	if (p.cat.value() * p.cat.scorerList.size() > topPlayer.cat.value() * topPlayer.cat.scorerList.size()) topPlayer = p;
+}
+
+public thread changeVal = catChangeScore (Profile p, Category cat, double initialScore, double givenScore) {
+}
+
+public static NUMBER_OF_INITIAL_CATEGORIES = 7;
